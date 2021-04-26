@@ -37,24 +37,26 @@ class AComponent extends Component {
               <li>Help Us</li>
             </ul>
           </nav>
-        </header>
+        
         <div className="heroTitle">
           <h1>
             <b>The Rick And Morty API</b>
           </h1>
         </div>
-
+        </header>
+         <div className='showcaseWrapper'>
         {data.results &&
           data.results.map((item) => {
-            let icon = 'statusIcon';
-            if(item.status === 'Alive')
-            icon = 'statusIcon';
-            else
-            icon = 'redIcon';
-            
-            console.log(item.status  + ':' +icon);
+            let icon = "statusIcon";
+            if (item.status === "Alive") icon = "statusIcon";
+            else icon = "redIcon";
+
+            console.log(item.status + ":" + icon);
             return (
-              <div className="wrapper">
+               
+               <div className="wrapper">
+                 
+                <div className='showcaseInner'>
                 <div className="imgWrapper">
                   <img src={item.image} alt="" />
                 </div>
@@ -69,12 +71,7 @@ class AComponent extends Component {
                     <h2>
                       {item.status} - {item.species}
                     </h2>
-                    <span className={icon}>
-                    </span>
-                    {/* <span className='redIcon'>
-                    </span> */}
-                    
-
+                    <span className={icon}></span>
                   </span>
                   <div className="section">
                     <span className="textGrey">Last Known Location:</span>
@@ -84,12 +81,18 @@ class AComponent extends Component {
                   </div>
                   <div className="section">
                     <span className="textGrey">First See in:</span>
-                    <a href="https://rickandmortyapi.com/api/episode"></a>
                   </div>
                 </div>
+                </div>
+              
               </div>
+              
             );
+          
+          
           })}
+        
+          </div>
       </div>
     );
   }
